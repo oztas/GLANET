@@ -3,18 +3,17 @@ GLANET Tutorial
 ===============
 
 .. GLANET includes both graphical user interface (GUI) and command-line interface.
-You can run GLANET using its graphical user interface (GUI) or command line arguments.
+GLANET can be run using its graphical user interface (GUI) or command line arguments. 
 
-By double clicking the GLANET.jar you can open GLANET's GUI. In this case, GUI will be opened with default amount of memory allocated for JVM which is 256MB.
+Throughout the guide, we will use *~path/to/GLANET.jar* to indicate your absolute path to **GLANET.jar** and *~path/to/GLANET Folder/* to indicate your absolute path to **GLANET Folder**.
+
+By double clicking the GLANET.jar you can start GLANET's GUI. GUI will start with default amount of memory allocated for JVM which is 256MB.
 In order to allocate specific amount of memory for GLANET.jar and run it through its GUI, one should write the following basic command on Terminal (Linux or Mac OS X) or on Command Prompt (Windows)\*::
 
 	$ java -Xms8G -Xmx8G −jar ~path/to/GLANET.jar
 
 Note that with this command above, 8GM of memory is allocated for GLANET.jar. Depending on the number of intervals in the sets and number of samplings you want to achieve you may need to increase the memory accordingly.
 
-In order to run GLANET.jar through command line arguments, in addition to the memory allocation parameter above, you must provide other arguments which are explained below.
-
-Throughout the guide, we will use *~path/to/GLANET.jar* to indicate your absolute path to **GLANET.jar** and *~path/to/GLANET Folder/* to indicate your absolute path to **GLANET Folder**.
 
 -------------------------------
 GLANET Graphical User Interface
@@ -26,23 +25,25 @@ GLANET Graphical User Interface
    GLANET GUI Upper Part
 
 
-GLANET provides Annotation by enabling user to annotate given genomic intervals w.r.t. ENCODE DNA regulatory elements, RefSeq genes,
-predefined gene sets such as KEGG Pathways, user defined gene sets and user defined library.
+GLANET provides annotation and enrichment analysis given genomic intervals with genomic elements in its default library or with user-defined library. The default
+library includes ENCODE DNA regulatory elements, RefSeq genes,
+predefined gene sets such as KEGG Pathways. User can define new genomic intervals or new gene sets and load it in the GLANET library.
 
-Other features of GLANET includes Enrichment Analysis and Regulatory Sequence Analysis.
+For specific input types, GLANET provides different functionalities. For SNP inputs, a detailed regulatory sequence analysis with transcription binding sites can be conducted.
 
 1)	**Input File Name**: (Mandatory)
 
-	You have to provide input file which contains user given genomic intervals.
-	Assume that Data.zip is extracted under a directory, let's call it **GLANET Folder**.
-	Then sample input data can be reached from 
+	The input file for GLANET contains user given genomic intervals.
+	Assume that Data.zip (OZNUR: you have to at some point tell the user to download the Data.zip data, there is no mention of it yet.) is extracted under a directory, we will refer to it  **GLANET Folder**.
+	Sample input data is under the subfolder:
 
 			   | ~path/to/GLANET Folder/Data/demo_input_data/
 
 2)	**Input Format**: (Mandatory)
 
 	GLANET supports input formats such as *dbSNP IDs*, *BED*, *GFF3*, *1-based coordinates (End Inclusive)* and *0-based coordinates (End Inclusive)*.
-	For the user given input file, Input Format has to be selected accordingly.
+	For queried input file, the right Input Format has to be selected.
+	OZNUR: Bu datalari burda boyle siralamak yerine, tutoriallarin icinde sunmaniz lazim. Su an ne analizi gerceklestireceklerini bilmedikleri icin bu dosyalar hic birsey ifade etmiyor usera. Ornegin sadece SNP analizi ile ilgilen birisi digerlerini okumak zorunda olmamali.
 
 	* *dbSNP IDs*
 		-  Sample input data for *dbSNP IDs* can be reached at
@@ -86,7 +87,7 @@ Other features of GLANET includes Enrichment Analysis and Regulatory Sequence An
 
 	If *BED*, *GFF3*, *1-based coordinates (End Inclusive)* or *0-based coordinates (End Inclusive)* is chosen as Input Format, then Assembly has to be set as either *GRCh38* or *GRCH37.p13*.
 	
-	In case of dbSNP IDs, there is no need to set Assembly.
+	In case of dbSNP IDs, there is no need to set assembly.
 
 4)	**GLANET Folder**: (Mandatory)
 
@@ -100,7 +101,7 @@ Other features of GLANET includes Enrichment Analysis and Regulatory Sequence An
 
 	For Annotation, set the number of bases for overlap definition.
 	e.g: Setting number of bases as *3* means that two intervals are accepted as overlapped if and only if these intervals have at least 3 overlapping bases.
-	Default is *1* in order to handle the case where the SNPs are given as input data.
+	Default is 1.
 
 6) 	**Annotation, Annotation Options**: (At least one of the Annotation Option has to be checked)
 
@@ -124,13 +125,13 @@ Other features of GLANET includes Enrichment Analysis and Regulatory Sequence An
 		This is a joint annotation which means that given interval, TF  and KEGG Pathway intervals overlap concurrently.
 		Here, same TF with different cell lines are pooled.
 		
-		In other words, joint annotation requires trio overlaps.
+	
 
 	* *TF and KEGG Pathway Annotation (CellLine Based)*
 		-  Check this check box, if you want to annotate given intervals concurrently w.r.t. Transcription Factors binding sites (CellLine Based) and KEGG Pathways in exon-based, regulation-based and all-based manner.
 		This is a joint annotation which means that given interval, TF and KEGG Pathway intervals overlap concurrently.
 	
-		In other words, joint annotation requires trio overlaps.
+	
 		
 	* *User Defined Gene Set Annotation*
 		-  Check this check box, if you want to annotate given intervals w.r.t. User Defined Gene Set in exon-based, regulation-based and all-based manner.
@@ -240,7 +241,7 @@ Other features of GLANET includes Enrichment Analysis and Regulatory Sequence An
 
    GLANET GUI Lower Part
 
-7)	**Enrichment**: (Optional)
+7)	**Enrichment**: 
 
 	* *Perform Enrichment*
 		-  Check *Perform Enrichment* check box if you want to achieve Enrichment Analysis.
