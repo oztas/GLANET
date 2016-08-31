@@ -3,18 +3,20 @@ GLANET Tutorial
 ===============
 
 .. GLANET includes both graphical user interface (GUI) and command-line interface.
-You can run GLANET using its graphical user interface (GUI) or command line arguments.
+GLANET can be run using its graphical user interface (GUI) or on the command line.
 
-By double clicking the GLANET.jar you can open GLANET's GUI. In this case, GUI will be opened with default amount of memory allocated for JVM which is 256MB.
+Throughout the guide, we will use *~path/to/GLANET.jar* to indicate your absolute path to **GLANET.jar** and *~path/to/GLANET Folder/* to indicate your absolute path to **GLANET Folder**.
+
+By double clicking the GLANET.jar open GLANET's GUI. In this case, GUI will be opened with default amount of memory allocated for JVM which is 256MB.
 In order to allocate specific amount of memory for GLANET.jar and run it through its GUI, one should write the following basic command on Terminal (Linux or Mac OS X) or on Command Prompt (Windows)\*::
 
 	$ java -Xms8G -Xmx8G −jar ~path/to/GLANET.jar
 
-Note that with this command above, 8GM of memory is allocated for GLANET.jar. Depending on the number of intervals in the sets and number of samplings you want to achieve you may need to increase the memory accordingly.
+With this command above, 8GM of memory is allocated for GLANET. Depending on the number of intervals in the sets and number of samplings you want to achieve, the memory allocated should be adjusted accordingly.
 
 In order to run GLANET.jar through command line arguments, in addition to the memory allocation parameter above, you must provide other arguments which are explained below.
 
-Throughout the guide, we will use *~path/to/GLANET.jar* to indicate your absolute path to **GLANET.jar** and *~path/to/GLANET Folder/* to indicate your absolute path to **GLANET Folder**.
+
 
 -------------------------------
 GLANET Graphical User Interface
